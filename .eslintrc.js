@@ -13,15 +13,15 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react'],
+  plugins: ['react', 'react-hooks'],
   // 0 or off，表示规则关闭，出错被忽略；1 or warn，表示出错给警告；2 or error，表示出错会报错
   rules: {
 
     // 禁止console
-    'no-console': ['warn'],
+    'no-console': ['off'],
 
     // 禁止不必要的括号
-    'no-extra-parens': ['error'],
+    'no-extra-parens': ['off'],
 
     // 禁止在常规字符串中出现模板字面量占位符语法
     'no-template-curly-in-string': ['error'],
@@ -265,6 +265,7 @@ module.exports = {
       {
         multiline: true,
         minProperties: 3,
+        // ImportDeclaration: 'never',
       },
     ],
 
@@ -413,5 +414,8 @@ module.exports = {
 
     // 强制在 yield* 表达式中 * 周围使用空格
     'yield-star-spacing': ['error', 'both'],
+
+    'react-hooks/rules-of-hooks': 'error', // 检查 Hook 的规则
+    'react-hooks/exhaustive-deps': 'warn', // 检查 effect 的依赖
   },
 };
